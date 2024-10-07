@@ -18,7 +18,7 @@ export default function ProductList() {
         const getProducts = async () => {
             setLoading(true);
             try {
-                const res = await fetch(`${apiUrl}/api/products`, {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
                     cache: "no-store", 
                 });
 
@@ -47,7 +47,7 @@ export default function ProductList() {
             setLoading(true);
             setDropdown([]); 
             try {
-                const res = await fetch(`${apiUrl}/api/search?query=${value}`);  // Use 'value' instead of 'query'
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/search?query=${value}`);  // Use 'value' instead of 'query'
                 
                 if (!res.ok) {
                     throw new Error("Failed to fetch search results");
@@ -107,7 +107,7 @@ export default function ProductList() {
 
         setLoadingAction(true);
         try {
-            const res = await fetch(`${apiUrl}/api/action`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/action`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
