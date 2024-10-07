@@ -28,7 +28,7 @@ export default function AddProduct() {
 
         try {
             // Make sure all number inputs are parsed correctly
-            const res = await fetch(`${apiUrl}/api/products`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
