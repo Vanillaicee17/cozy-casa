@@ -8,8 +8,9 @@ export default function AddProduct() {
     const router = useRouter();
     const [name, setName] = useState("");
     const [basePrice, setBasePrice] = useState("");
-    const [shippingGST, setShippingGST] = useState("");
-    const [packaging, setPackaging] = useState("");
+    //const [shippingGST, setShippingGST] = useState("");
+    //const [packaging, setPackaging] = useState("");
+    const [finalCost, setFinalCost] = useState("")
     const [quantity, setQuantity] = useState("");
     const [alert, setAlert] = useState("");
     const [error, setError] = useState("");
@@ -18,7 +19,7 @@ export default function AddProduct() {
         e.preventDefault();
 
         // Basic validation
-        if (!name || !basePrice || !shippingGST || !packaging || !quantity) {
+        if (!name || !basePrice || !finalCost || !quantity) {
             setError("All fields are required");
             return;
         }
@@ -36,8 +37,9 @@ export default function AddProduct() {
                 body: JSON.stringify({
                     name,
                     basePrice: parseFloat(basePrice), // parse as float for price
-                    shippingGST: parseFloat(shippingGST),
-                    packaging: parseFloat(packaging),
+                    //shippingGST: parseFloat(shippingGST),
+                    //packaging: parseFloat(packaging),
+                    finalCost: parseFloat(finalCost),
                     quantity: parseInt(quantity), // parse as integer for quantity
                 }),
             });
@@ -86,17 +88,17 @@ export default function AddProduct() {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">Shipping + GST:</label>
+                        <label className="block text-gray-700">Final Cost:</label>
                         <input
-                            onChange={(e) => setShippingGST(e.target.value)}
+                            onChange={(e) => setFinalCost(e.target.value)}
                             type="number"
-                            name="shippingGST"
-                            value={shippingGST}
+                            name="finalCost"
+                            value={finalCost}
                             className="w-full p-2 border rounded"
-                            placeholder="Enter shipping + GST"
+                            placeholder="Enter final cost"
                         />
                     </div>
-                    <div className="mb-4">
+                    {/* <div className="mb-4">
                         <label className="block text-gray-700">Packaging:</label>
                         <input
                             onChange={(e) => setPackaging(e.target.value)}
@@ -106,7 +108,7 @@ export default function AddProduct() {
                             className="w-full p-2 border rounded"
                             placeholder="Enter packaging cost"
                         />
-                    </div>
+                    </div> */}
                     <div className="mb-4">
                         <label className="block text-gray-700">Quantity:</label>
                         <input

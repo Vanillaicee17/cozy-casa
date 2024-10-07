@@ -229,15 +229,14 @@ export default function ProductList() {
                     <thead>
                         <tr className="bg-gray-200">
                             <th className="border p-2 text-center">Product Name</th>
-                            <th className="border p-2 text-center">Total</th>
+                            <th className="border p-2 text-center">Base Price</th>
                             <th className="border p-2 text-center">Quantity</th>
-                            <th className="border p-2 text-center">Final Price</th>
+                            <th className="border p-2 text-center">Final Cost</th>
                         </tr>
                     </thead>
                     <tbody>
                         {products.map((p) => {
-                            const total = p.basePrice + p.shippingGST + p.packaging;
-                            const finalPrice = total * p.quantity;
+                            const total = p.basePrice;
                             return (
                                 <tr key={p._id} className="bg-white">
                                     <td className="border p-2 text-center">{p.name}</td>
@@ -247,7 +246,7 @@ export default function ProductList() {
                                         <span className="inline-block w-8 mx-3">{p.quantity}</span>
                                         <button onClick={() => tablebuttonAction("plus", p.name, p.quantity)} disabled={loadingAction} className="add cursor-pointer inline-block px-3 py-1 bg-purple-500 text-white font-semibold rounded-lg shadow-md disabled:bg-purple-200">+</button>
                                     </td>
-                                    <td className="border p-2 text-center">{finalPrice}</td>
+                                    <td className="border p-2 text-center">{p.finalCost}</td>
                                 </tr>
                             );
                         })}
