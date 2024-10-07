@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
 export default function AddProduct() {
     const router = useRouter();
@@ -27,7 +28,7 @@ export default function AddProduct() {
 
         try {
             // Make sure all number inputs are parsed correctly
-            const res = await fetch('http://localhost:3000/api/products', {
+            const res = await fetch(`${apiUrl}/api/products`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
