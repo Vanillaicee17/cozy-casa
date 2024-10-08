@@ -213,7 +213,7 @@ export default function ProductList() {
                         <div key={item._id} className="container flex justify-between my-3">
                             <span className="px-4 py-2">{item.name}</span>
                             <span className="px-4 py-2">{item.basePrice}</span>
-                            <div className="mx-5">
+                            <div className="mx-3 flex items-center justify-center">
                                 <button onClick={() => buttonAction("minus", item.name, item.quantity)} disabled={loadingAction} className="subtract cursor-pointer inline-block px-3 py-1 bg-purple-500 text-white font-semibold rounded-lg shadow-md disabled:bg-purple-200">-</button>
                                 <span className="quantity inline-block w-3 mx-3">{item.quantity}</span>
                                 <button onClick={() => buttonAction("plus", item.name, item.quantity)} disabled={loadingAction} className="add cursor-pointer inline-block px-3 py-1 bg-purple-500 text-white font-semibold rounded-lg shadow-md disabled:bg-purple-200">+</button>
