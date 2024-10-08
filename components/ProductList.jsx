@@ -241,7 +241,7 @@ export default function ProductList() {
                                 <tr key={p._id} className="bg-white">
                                     <td className="border px-2 py-1 text-center">{p.name}</td>
                                     <td className="border px-2 py-1 text-center">{total}</td>
-                                    <td className="border px-2 py-1 text-center">
+                                    <td className="border px-2 py-4 text-center">
                                         <button onClick={() => tablebuttonAction("minus", p.name, p.quantity)} disabled={loadingAction} className="subtract cursor-pointer inline-block px-3 py-1 bg-purple-500 text-white font-semibold rounded-lg shadow-md disabled:bg-purple-200">-</button>
                                         <span className="inline-block w-3 mx-3">{p.quantity}</span>
                                         <button onClick={() => tablebuttonAction("plus", p.name, p.quantity)} disabled={loadingAction} className="add cursor-pointer inline-block px-3 py-1 bg-purple-500 text-white font-semibold rounded-lg shadow-md disabled:bg-purple-200">+</button>
