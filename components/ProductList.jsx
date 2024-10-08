@@ -43,7 +43,7 @@ export default function ProductList() {
         let value = e.target.value;
         setQuery(value);
         
-        if (value.length > 1) {  // Fix comparison for string length
+        if (value.length > 0) {  // Fix comparison for string length
             setLoading(true);
             setDropdown([]); 
             try {
