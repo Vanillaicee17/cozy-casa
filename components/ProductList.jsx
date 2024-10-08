@@ -209,7 +209,7 @@ export default function ProductList() {
               className="grid grid-cols-3 hover:bg-gray-100 cursor-pointer p-3 items-center border-t-2 border-indigo-500/50"
             >
               <div className="grid justify-items-start">{item.name}</div>
-              <div className="grid justify-items-center">{item.finalCost}</div>
+              <div className="grid justify-items-center">₹{item.finalCost}</div>
               <div className="">
                 <div className="flex items-center justify-end">
                   <button
@@ -255,15 +255,16 @@ export default function ProductList() {
             <tr className="bg-gray-200">
               <th className="border p-2 text-center">Product Name</th>
               <th className="border p-2 text-center">Base Price</th>
-              <th className="border p-2 text-center">Quantity</th>
               <th className="border p-2 text-center">Final Cost</th>
+              <th className="border p-2 text-center">Quantity</th>
             </tr>
           </thead>
           <tbody>
             {products.map((p) => (
               <tr key={p._id} className="bg-white">
                 <td className="border px-2 py-1 text-center">{p.name}</td>
-                <td className="border px-2 py-1 text-center">{p.basePrice}</td>
+                <td className="border px-2 py-1 text-center">₹{p.basePrice}</td>
+                <td className="border px-2 py-1 text-center">₹{p.finalCost}</td>
                 <td className="border px-2 py-1 text-center">
                   <div className="flex items-center justify-center">
                     <button
@@ -275,7 +276,7 @@ export default function ProductList() {
                     >
                       -
                     </button>
-                    <span className="mx-3">{p.quantity}</span>
+                    <span className="mx-2">{p.quantity}</span>
                     <button
                       onClick={() =>
                         handleProductAction("plus", p.name, p.quantity)
@@ -287,7 +288,6 @@ export default function ProductList() {
                     </button>
                   </div>
                 </td>
-                <td className="border px-2 py-1 text-center">{p.finalCost}</td>
               </tr>
             ))}
           </tbody>
