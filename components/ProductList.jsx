@@ -45,7 +45,7 @@ export default function ProductList() {
     let value = e.target.value;
     setQuery(value);
 
-    if (value.length > 0) {
+    if (value.length > 1) {
       setLoading(true);
       setDropdown([]);
       try {
@@ -262,10 +262,10 @@ export default function ProductList() {
           <tbody>
             {products.map((p) => (
               <tr key={p._id} className="bg-white">
-                <td className="border px-2 py-1 text-center">{p.name}</td>
-                <td className="border px-2 py-1 text-center">₹{p.basePrice}</td>
-                <td className="border px-2 py-1 text-center">₹{p.finalCost}</td>
-                <td className="border px-2 py-1 text-center">
+                <td className="border px-2 py-3 text-center">{p.name}</td>
+                <td className="border px-2 py-3 text-center">₹{p.basePrice}</td>
+                <td className="border px-2 py-3 text-center">₹{p.finalCost}</td>
+                <td className="border px-2 py-3 text-center">
                   <div className="flex items-center justify-center">
                     <button
                       onClick={() =>
