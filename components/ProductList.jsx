@@ -215,7 +215,7 @@ export default function ProductList() {
                             <span className="px-4 py-2">{item.basePrice}</span>
                             <div className="mx-5">
                                 <button onClick={() => buttonAction("minus", item.name, item.quantity)} disabled={loadingAction} className="subtract cursor-pointer inline-block px-3 py-1 bg-purple-500 text-white font-semibold rounded-lg shadow-md disabled:bg-purple-200">-</button>
-                                <span className="quantity inline-block w-8 mx-3">{item.quantity}</span>
+                                <span className="quantity inline-block w-5 mx-3">{item.quantity}</span>
                                 <button onClick={() => buttonAction("plus", item.name, item.quantity)} disabled={loadingAction} className="add cursor-pointer inline-block px-3 py-1 bg-purple-500 text-white font-semibold rounded-lg shadow-md disabled:bg-purple-200">+</button>
                             </div>
                         </div>
