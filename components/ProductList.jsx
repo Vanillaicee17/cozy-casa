@@ -210,8 +210,8 @@ export default function ProductList() {
             >
               <div className="grid justify-items-start">{item.name}</div>
               <div className="grid justify-items-center">{item.finalCost}</div>
-              <div className="grid justify-items-end">
-                <div className="flex items-center">
+              <div className="">
+                <div className="flex items-center justify-end">
                   <button
                     onClick={() =>
                       handleProductAction(
@@ -226,7 +226,7 @@ export default function ProductList() {
                   >
                     -
                   </button>
-                  <span className="mx-3">{item.quantity}</span>
+                  <span className="mx-2">{item.quantity}</span>
                   <button
                     onClick={() =>
                       handleProductAction(
